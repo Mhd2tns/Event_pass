@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvrez notre menu complet chez O'Buns - Burgers, Croques, Tacos et plus encore. Des ingrédients frais et des recettes maison.">
+    <meta name="keywords" content="burger, street food, restaurant, Sainte-Geneviève-des-Bois, fast food artisanal, menu">
+    <meta name="author" content="O'Buns">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Menu - O'Buns">
+    <meta property="og:description" content="Découvrez notre menu de burgers gourmets et street food artisanal">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1586190848861-99aa4a171e90">
+    <meta property="og:url" content="https://obuns.fr/menu">
+    <title>Menu - O'Buns</title>
+    <link rel="canonical" href="https://obuns.fr/menu">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#e67e22">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        :root {
+            --bg-color: #f8f5f2;
+            --text-color: #333;
+            --white-bg: #ffffff;
+            --gray-50: #f9fafb;
+            --orange-50: #fff7ed;
+        }
+        
+        [data-theme="dark"] {
+            --bg-color: #1a1a1a;
+            --text-color: #f8f5f2;
+            --white-bg: #2d2d2d;
+            --gray-50: #2d2d2d;
+            --orange-50: #3d2d2d;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+        
+        .bg-white {
+            background-color: var(--white-bg);
+        }
+        
+        .bg-gray-50 {
+            background-color: var(--gray-50);
+        }
+        
+        .bg-orange-50 {
+            background-color: var(--orange-50);
+        }
+        
+        .text-gray-800 {
+            color: var(--text-color);
+        }
+        
+        .text-gray-600 {
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #e67e22;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .menu-item:hover .menu-img {
+            transform: scale(1.05);
+        }
+        
+        .menu-img {
+            transition: transform 0.3s ease;
+        }
+        
+        .btn-primary {
+            background-color: #e67e22;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #d35400;
+            transform: translateY(-2px);
+        }
+        
+        .menu-item {
+            transition: all 0.3s ease;
+        }
+        
+        .menu-item.hidden {
+            display: none;
+        }
+        
+        .menu-item {
+            transition: transform 0.3s ease;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .category-title {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .category-title:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 2px;
+            bottom: -5px;
+            left: 25%;
+            background-color: #e67e22;
+        }
+        
+        @keyframes kenburns {
+            0% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .animate-kenburns {
+            animation: kenburns 12s ease-in-out forwards;
+        }
+        @keyframes fadein {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: none; }
+        }
+        .animate-fadein {
+            animation: fadein 1.2s cubic-bezier(.4,0,.2,1) both;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-3xl font-bold text-orange-600">O'<span class="text-gray-800">BUNS</span></a>
+                </div>
+                
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link text-gray-800 hover:text-orange-600">Accueil</a>
+                    <a href="menu.html" class="nav-link text-gray-800 hover:text-orange-600">Menu</a>
+                    <a href="about.html" class="nav-link text-gray-800 hover:text-orange-600">Notre Histoire</a>
+                    <a href="contact.html" class="nav-link text-gray-800 hover:text-orange-600">Contact</a>
+                </nav>
+                
+                <div class="flex items-center space-x-4">
+                    <button class="md:hidden text-gray-800 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Bannière dynamique -->
+    <section class="relative min-h-[260px] md:min-h-[340px] flex flex-col items-center justify-center pt-16 pb-8 md:pt-28 md:pb-14 mb-12 overflow-hidden bg-gradient-to-br from-[#e67e22] via-[#ffb347] to-[#ff7f50] animate-gradient-move">
+        <div class="absolute inset-0 bg-gradient-to-br from-[#e67e22] via-[#ffb347] to-[#ff7f50] opacity-90 animate-gradient-move"></div>
+        <div class="relative z-10 flex flex-col items-center text-center animate-fadein w-full">
+            <div class="mb-4 animate-bounce-slow">
+                <i class="fas fa-hotdog text-white text-6xl md:text-7xl drop-shadow-lg"></i>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-2 drop-shadow-lg">Découvrez notre <span class="text-orange-900">Menu</span></h1>
+            <p class="text-lg md:text-xl text-white drop-shadow mb-4">Burgers, croques, tacos, boissons et desserts maison</p>
+        </div>
+        <style>
+        @keyframes gradient-move {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .animate-gradient-move {
+            background-size: 200% 200%;
+            animation: gradient-move 8s ease-in-out infinite;
+        }
+        @keyframes bounce-slow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-18px); }
+        }
+        .animate-bounce-slow {
+            animation: bounce-slow 2.5s infinite;
+        }
+        </style>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-wrap justify-center gap-4 mb-12" id="category-filters">
+                <button class="category-btn px-6 py-2 rounded-full bg-orange-600 text-white font-semibold" data-category="all">Tous</button>
+                <button class="category-btn px-6 py-2 rounded-full border border-gray-300 hover:bg-orange-50 font-semibold text-gray-800" data-category="obuns">O'Buns</button>
+                <button class="category-btn px-6 py-2 rounded-full border border-gray-300 hover:bg-orange-50 font-semibold text-gray-800" data-category="omix">O'Mix</button>
+                <button class="category-btn px-6 py-2 rounded-full border border-gray-300 hover:bg-orange-50 font-semibold text-gray-800" data-category="oburger">O'Burger</button>
+                <button class="category-btn px-6 py-2 rounded-full border border-gray-300 hover:bg-orange-50 font-semibold text-gray-800" data-category="boissons">Boissons</button>
+                <button class="category-btn px-6 py-2 rounded-full border border-gray-300 hover:bg-orange-50 font-semibold text-gray-800" data-category="desserts">Desserts</button>
+            </div>
+            <div class="max-w-6xl mx-auto">
+                <div id="menu-container">
+                    <!-- Le contenu sera généré par menu.js -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">O'<span class="text-orange-600">BUNS</span></h3>
+                    <p class="text-gray-400">Street food artisanal à Sainte-Geneviève-des-Bois. Des burgers gourmets préparés avec passion.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Liens rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-orange-600 transition">Accueil</a></li>
+                        <li><a href="menu.html" class="text-gray-400 hover:text-orange-600 transition">Menu</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-orange-600 transition">À propos</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-orange-600 transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Légal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="mentions-legales.html" class="text-gray-400 hover:text-orange-600 transition">Mentions légales</a></li>
+                        <li><a href="politique-confidentialite.html" class="text-gray-400 hover:text-orange-600 transition">Politique de confidentialité</a></li>
+                        <li><a href="cgv.html" class="text-gray-400 hover:text-orange-600 transition">CGV</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-center">Suivez-nous</h4>
+                    <div class="flex justify-center">
+                        <a href="https://www.instagram.com/o.buns91/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-orange-600 transition">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 O'Buns. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/menu.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeMenu();
+        });
+    </script>
+</body>
+</html> 

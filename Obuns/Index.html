@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="O'Buns - Restaurant de street food artisanal à Sainte-Geneviève-des-Bois. Découvrez nos burgers gourmets, tacos et plats frais préparés avec passion.">
+    <meta name="keywords" content="burger, street food, restaurant, Sainte-Geneviève-des-Bois, fast food artisanal">
+    <meta name="author" content="O'Buns">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="O'Buns - Fast Food Artisanal">
+    <meta property="og:description" content="Restaurant de street food artisanal à Sainte-Geneviève-des-Bois">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1586190848861-99aa4a171e90">
+    <meta property="og:url" content="https://obuns.fr">
+    <title>O'Buns - Fast Food Artisanal à Sainte-Geneviève-des-Bois</title>
+    <link rel="canonical" href="https://obuns.fr">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#e67e22">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f5f2;
+            color: #333;
+        }
+        
+        .hero {
+            height: 80vh;
+        }
+        
+        .menu-item:hover .menu-img {
+            transform: scale(1.08);
+        }
+        
+        .menu-img {
+            transition: transform 0.3s ease;
+        }
+        
+        .btn-primary {
+            background-color: #e67e22;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #d35400;
+            transform: translateY(-2px);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #e67e22;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .floating-burger {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes kenburns {
+            0% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .animate-kenburns {
+            animation: kenburns 12s ease-in-out forwards;
+        }
+        @keyframes fadein {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: none; }
+        }
+        .animate-fadein {
+            animation: fadein 1.2s cubic-bezier(.4,0,.2,1) both;
+        }
+        .menu-item {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+        }
+        .menu-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-3xl font-bold text-orange-600">O'<span class="text-gray-800">BUNS</span></a>
+                </div>
+                
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link text-gray-800 hover:text-orange-600">Accueil</a>
+                    <a href="menu.html" class="nav-link text-gray-800 hover:text-orange-600">Menu</a>
+                    <a href="about.html" class="nav-link text-gray-800 hover:text-orange-600">Notre Histoire</a>
+                    <a href="contact.html" class="nav-link text-gray-800 hover:text-orange-600">Contact</a>
+                </nav>
+                
+                <div class="flex items-center space-x-4">
+                    <button class="md:hidden text-gray-800 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[380px] md:min-h-[480px] flex flex-col items-center justify-center pt-24 pb-12 md:pt-36 md:pb-20 mb-12 overflow-hidden bg-gradient-to-br from-[#e67e22] via-[#ffb347] to-[#ff7f50] animate-gradient-move">
+        <div class="absolute inset-0 bg-gradient-to-br from-[#e67e22] via-[#ffb347] to-[#ff7f50] opacity-90 animate-gradient-move"></div>
+        <div class="relative z-10 flex flex-col items-center text-center animate-fadein w-full">
+            <div class="mb-4 animate-bounce-slow">
+                <i class="fas fa-hotdog text-white text-7xl md:text-8xl drop-shadow-lg"></i>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">O'<span class="text-orange-900">BUNS</span></h1>
+            <p class="text-2xl md:text-3xl text-white drop-shadow mb-8">Fast Food Artisanal à Sainte-Geneviève-des-Bois</p>
+            <a href="menu.html" class="inline-block bg-orange-600 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:bg-orange-700 transition">Découvrir le menu</a>
+        </div>
+        <style>
+        @keyframes gradient-move {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .animate-gradient-move {
+            background-size: 200% 200%;
+            animation: gradient-move 8s ease-in-out infinite;
+        }
+        @keyframes bounce-slow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-18px); }
+        }
+        .animate-bounce-slow {
+            animation: bounce-slow 2.5s infinite;
+        }
+        </style>
+    </section>
+
+    <!-- Special Offers -->
+    <section class="py-16 bg-orange-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">NOS MEILLEURES VENTES</h2>
+            <div id="best-sellers" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+            
+            <div class="text-center mt-12">
+                <a href="menu.html" class="inline-flex items-center bg-orange-600 text-white px-8 py-3 rounded-full hover:bg-orange-700 transition">
+                    <span class="mr-2">Voir tout le menu</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">PREMIERS AVIS CLIENTS</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Avis 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-sm text-gray-500">Google</span>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">« Tout est bon, de l'ambiance à la déco et aussi l'accueil chaleureux et le goût. »</p>
+                    <div class="border-t border-gray-100 pt-4">
+                        <h4 class="text-gray-800 font-semibold">Ali Bouazdia</h4>
+                        <p class="text-gray-500 text-sm">Il y a un mois</p>
+                    </div>
+                </div>
+                
+                <!-- Avis 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-sm text-gray-500">Google</span>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">« Très bonne expérience. Le nature est bonne et le personnel est gentil. »</p>
+                    <div class="border-t border-gray-100 pt-4">
+                        <h4 class="text-gray-800 font-semibold">Yussuf Kaya</h4>
+                        <p class="text-gray-500 text-sm">Il y a un mois</p>
+                    </div>
+                </div>
+                
+                <!-- Avis 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-sm text-gray-500">Google</span>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">« Très très bon !!! Kid-friendliness : excellent accueil et très bon personnel !! »</p>
+                    <div class="border-t border-gray-100 pt-4">
+                        <h4 class="text-gray-800 font-semibold">Lina M'rabtine</h4>
+                        <p class="text-gray-500 text-sm">Il y a un mois</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12 space-y-4">
+                <p class="text-gray-600">Vous avez visité O'Buns ? Partagez votre expérience !</p>
+                <a href="https://www.google.com/search?client=safari&sa=X&sca_esv=5734fedee28d1695&rls=en&hl=fr-FR&biw=1440&bih=725&tbm=lcl&q=O%27Buns+Avis&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxIxNDYysjQ2tDC1NDIxNDI1MDGzMNrAyPiKkdtf3ak0r1jBsSyzeBErMg8AHOWmZjcAAAA&rldimm=13229318592412504682&ved=2ahUKEwiFmdmr2PGNAxXDLPsDHRieMWcQ9fQKegQIThAH#lkt=LocalPoiReviews" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-orange-600 text-white px-6 py-3 rounded-full hover:bg-orange-700 transition">
+                    <i class="fab fa-google text-xl mr-2"></i>
+                    Laisser un avis sur Google
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">O'<span class="text-orange-600">BUNS</span></h3>
+                    <p class="text-gray-400">Street food artisanal à Sainte-Geneviève-des-Bois. Des burgers gourmets préparés avec passion.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Liens rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-orange-600 transition">Accueil</a></li>
+                        <li><a href="menu.html" class="text-gray-400 hover:text-orange-600 transition">Menu</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-orange-600 transition">À propos</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-orange-600 transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Légal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="mentions-legales.html" class="text-gray-400 hover:text-orange-600 transition">Mentions légales</a></li>
+                        <li><a href="politique-confidentialite.html" class="text-gray-400 hover:text-orange-600 transition">Politique de confidentialité</a></li>
+                        <li><a href="cgv.html" class="text-gray-400 hover:text-orange-600 transition">CGV</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-center">Suivez-nous</h4>
+                    <div class="flex justify-center">
+                        <a href="https://www.instagram.com/o.buns91/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-orange-600 transition">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 O'Buns. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script dynamique best-sellers -->
+    <script>
+        console.log('Script best-sellers chargé');
+        // Données des meilleures ventes (extraites du menu)
+        const bestSellers = [
+            {
+                name: "Le Must",
+                description: "2 steaks 45G et de CORDON BLEU parfumés de CHEDDARS. Frites et boisson incluses.",
+                price: "11,50€",
+                image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1998&q=80",
+                badge: "Populaire"
+            },
+            {
+                name: "Le Grec à la broche",
+                description: "VIANDE KEBAB coupée à la BROCHE dans le pain de votre choix ! Frites et boisson incluses.",
+                price: "11,50€",
+                image: "https://images.unsplash.com/photo-1550547660-d9450f859349?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1965&q=80",
+                badge: "Nouveau"
+            },
+            {
+                name: "Croque Spéciale",
+                description: "CREME FRAICHE, JAMBON, 2 STEAKS, OEUF et FROMAGES maison. Frites et boisson incluses.",
+                price: "9,50€",
+                image: "https://images.unsplash.com/photo-1606755962773-d324e0a13086?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
+                badge: "Best-seller"
+            }
+        ];
+
+        function createBestSellerCard(item) {
+            const card = document.createElement('div');
+            card.className = 'bg-white rounded-xl shadow-lg overflow-hidden menu-item';
+            let badgeHtml = '';
+            if (item.badge) {
+                badgeHtml = `<div class=\"absolute top-4 right-4 bg-orange-600 text-white px-3 py-1 rounded-full font-bold\">${item.badge}</div>`;
+            }
+            card.innerHTML = `
+                <div class=\"relative h-48 overflow-hidden group\">\n                    <img src=\"${item.image}\" alt=\"${item.name}\" class=\"w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 menu-img\">\n                    ${badgeHtml}\n                </div>\n                <div class=\"p-6\">\n                    <h3 class=\"text-xl font-bold mb-2\">${item.name}</h3>\n                    <p class=\"text-gray-600 mb-4\">${item.description}</p>\n                    <div class=\"flex justify-between items-center\">\n                        <span class=\"text-orange-600 font-bold text-lg\">${item.price}</span>\n                    </div>\n                </div>\n            `;
+            return card;
+        }
+
+        // Génération dynamique des cartes best-sellers
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('best-sellers');
+            if (!container) {
+                console.error('Conteneur #best-sellers introuvable !');
+                return;
+            }
+            container.innerHTML = '';
+            bestSellers.forEach((item, i) => {
+                const card = createBestSellerCard(item);
+                container.appendChild(card);
+            });
+            // Animation progressive
+            const cards = container.querySelectorAll('.menu-item');
+            cards.forEach(el => el.classList.remove('visible'));
+            void document.body.offsetWidth;
+            setTimeout(() => {
+                cards.forEach((el, i) => {
+                    setTimeout(() => el.classList.add('visible'), 120 * i);
+                });
+            }, 200);
+        });
+    </script>
+</body>
+</html>
+
